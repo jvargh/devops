@@ -1,0 +1,27 @@
+{
+                'version': '0.2',
+                'phases': {
+                    'install':{
+                        'commands': [
+                            'echo "--INSTALL PHASE--" ',
+                            'npm install --silent --no-progress serverless -g'
+                        ]
+                    },
+                    'pre_build':{
+                        'commands':[
+                            'echo "--PRE BUILD PHASE--"',
+                            'npm install --silent --no-progress'
+                        ]
+                    },
+                    'build': {
+                        'commands':[
+                            'echo "--BUILD PHASE--" ',
+                            'serverless deploy -s $STAGE'
+                        ]
+                    }
+                },
+                'artifacts': {
+                    'files': [ '**/*' ],
+                    'base-directory': '.serverless'
+                }    
+}
