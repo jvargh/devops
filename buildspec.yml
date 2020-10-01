@@ -16,7 +16,7 @@
                     'build': {
                         'commands':[
                             'echo "--BUILD PHASE--" ',
-                            'serverless deploy -s $STAGE'
+                            'serverless deploy -s dev'
                         ]
                     }
                 },
